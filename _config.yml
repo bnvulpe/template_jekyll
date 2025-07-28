@@ -1,0 +1,21 @@
+title: bnvulpe
+url: https://bnvulpe.github.io/inmersein/
+baseurl: 
+
+author: bnvulpe
+
+include: ['_pages']
+
+collections_dir: series
+
+collections:
+  lacus:
+    output: true
+  cn_fishnet:
+    output: true
+  bastilleday:
+    output: true
+
+markdown: kramdown
+kramdown:
+  input: GFM
