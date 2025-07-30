@@ -14,25 +14,35 @@
 			{% assign coll = site.collections | where: "label", n | first %}
 			{% assign list = coll.files | sort: "basename" %}
 
+			{% assign size = list.size %}
+			{% assign base = size | divided_by: 3 %}
+			{% assign extra = size | modulo: 3 %}
+
+            {% assign add_to_col1 = 0 %}
+            {% if extra > 0 %}
+                {% assign add_to_col1 = 1 %}
+            {% endif %}
+
+            {% assign add_to_col2 = 0 %}
+            {% if extra > 1 %}
+                {% assign add_to_col2 = 1 %}
+            {% endif %}
+
+			{% assign col1 = base | plus: add_to_col1 %}
+			{% assign col2 = base | plus: add_to_col2 %}
+			{% assign col3 = base %}
+
             <p>DEBUG - list.size: {{ list.size }}</p>
-            {% assign size = list.size %}
             <p>DEBUG - size (after assign): {{ size }}</p>
-            {% assign base = size | divided_by: 3 %}
             <p>DEBUG - base: {{ base }}</p>
-            {% assign extra = size | modulo: 3 %}
             <p>DEBUG - extra: {{ extra }}</p>
-
-            <p>DEBUG - (extra > 0): {{ extra > 0 }}</p>
-            <p>DEBUG - (extra > 1): {{ extra > 1 }}</p>
-
-            {% assign col1 = base | plus: (extra > 0) %}
+            <p>DEBUG - add_to_col1: {{ add_to_col1 }}</p>
+            <p>DEBUG - add_to_col2: {{ add_to_col2 }}</p>
             <p>DEBUG - col1: {{ col1 }}</p>
-            {% assign col2 = base | plus: (extra > 1) %}
             <p>DEBUG - col2: {{ col2 }}</p>
-            {% assign col3 = base %}
             <p>DEBUG - col3: {{ col3 }}</p>
             {% assign start1 = 0 %}
- 			{% assign start2 = col1 %}
+			{% assign start2 = col1 %}
 			{% assign start3 = col1 | plus: col2 %}
 
 			<div class="one-third column">
