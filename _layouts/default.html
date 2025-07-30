@@ -26,6 +26,12 @@
 			{% assign start2 = col1 %}
 			{% assign start3 = col1 | plus: col2 %}
 
+
+			<p>Total images found: **{{ list.size }}**</p>
+            <p>Calculated col1: {{ col1 }}</p>
+            <p>Calculated col2: {{ col2 }}</p>
+            <p>Calculated col3: {{ col3 }}</p>
+
 			<div class="one-third column">
 				{% for image in list offset: start1 limit: col1 %}
 				<article class="thumb">
