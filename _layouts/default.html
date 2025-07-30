@@ -14,23 +14,26 @@
 			{% assign coll = site.collections | where: "label", n | first %}
 			{% assign list = coll.files | sort: "basename" %}
 
-			{% assign size = list.size %}
-			{% assign base = size | divided_by: 3 %}
-			{% assign extra = size | modulo: 3 %}
+            <p>DEBUG - list.size: {{ list.size }}</p>
+            {% assign size = list.size %}
+            <p>DEBUG - size (after assign): {{ size }}</p>
+            {% assign base = size | divided_by: 3 %}
+            <p>DEBUG - base: {{ base }}</p>
+            {% assign extra = size | modulo: 3 %}
+            <p>DEBUG - extra: {{ extra }}</p>
 
-			{% assign col1 = base | plus: (extra > 0) %}
-			{% assign col2 = base | plus: (extra > 1) %}
-			{% assign col3 = base %}
+            <p>DEBUG - (extra > 0): {{ extra > 0 }}</p>
+            <p>DEBUG - (extra > 1): {{ extra > 1 }}</p>
 
-			{% assign start1 = 0 %}
-			{% assign start2 = col1 %}
+            {% assign col1 = base | plus: (extra > 0) %}
+            <p>DEBUG - col1: {{ col1 }}</p>
+            {% assign col2 = base | plus: (extra > 1) %}
+            <p>DEBUG - col2: {{ col2 }}</p>
+            {% assign col3 = base %}
+            <p>DEBUG - col3: {{ col3 }}</p>
+            {% assign start1 = 0 %}
+ 			{% assign start2 = col1 %}
 			{% assign start3 = col1 | plus: col2 %}
-
-
-			<p>Total images found: **{{ list.size }}**</p>
-            <p>Calculated col1: {{ col1 }}</p>
-            <p>Calculated col2: {{ col2 }}</p>
-            <p>Calculated col3: {{ col3 }}</p>
 
 			<div class="one-third column">
 				{% for image in list offset: start1 limit: col1 %}
