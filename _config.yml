@@ -11,9 +11,9 @@ collections_dir: series
 collections:
   artwork:
     output: true
-  cn_fishnet:
+  elit:
     output: true
-  bastilleday:
+  locus:
     output: true
 
 markdown: kramdown
