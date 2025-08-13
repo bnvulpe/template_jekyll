@@ -1,5 +1,5 @@
 ---
-title: Bastille Day'19
+title: Locus
 layout: default
 description: quisque.
 type: project
