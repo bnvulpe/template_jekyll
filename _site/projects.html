@@ -82,7 +82,6 @@
 window.onscroll = function() {myFunction()};
 
 var navbar = document.getElementById("navbar");
-var brand = document.getElementById("brand");
 var height = navbar.offsetHeight; // find height of the navbar
 var sticky = navbar.offsetTop + height; // find y-pos of the navbar
 
@@ -92,11 +91,8 @@ wrapper.style.height = height + "px";
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky");
-    brand.classList.remove("hide");
-    brand.classList.add("fade");
   } else {
     navbar.classList.remove("sticky");
-    brand.classList.add("hide");
   }
 }
 </script>
