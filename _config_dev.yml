@@ -9,7 +9,7 @@ include: ['_pages']
 collections_dir: series
 
 collections:
-  lacus:
+  artwork:
     output: true
   cn_fishnet:
     output: true
